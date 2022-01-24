@@ -9,14 +9,13 @@ public class Driver {
         String inputFile = " ";
         if ( args.length>0 ) inputFile = args[0];
         InputStream is = System.in;
-        if ( inputFile!=null ) is = new FileInputStream("src/nested.micro");
         CharStream charStream = CharStreams.fromStream(is);
         Little lexer = new Little(charStream);
         Vocabulary vocabulary = lexer.getVocabulary();
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         tokens.fill();
 
-        for(var t : tokens.getTokens()){
+        for(Token t : tokens.getTokens()){
             if(Objects.equals(vocabulary.getSymbolicName(t.getType()), "EOF")){
                 continue;
             }
