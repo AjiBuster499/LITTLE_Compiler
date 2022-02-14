@@ -1,1 +1,8 @@
 .antlr/
+resources/
+step_1/Driver.class
+step_1/Little.tokens
+step_1/Little.java
+.gitignore
+step_1/Little.class
+step_1/Little.interp
